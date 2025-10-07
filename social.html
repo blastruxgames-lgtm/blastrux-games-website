@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <title>Blastrux Games</title>
+  <link rel="shortcut icon" href="img/icono.png" type="image/x-icon" />
+</head>
+<body>
+  <nav>
+    <div class="logo"><img src="img/icono.png" alt="icono" />Blastrux Games</div>
+    <div class="menu">
+      <a href="index.html" id="nav-inicio" data-key="nav.inicio">Inicio</a>
+      <a href="games.html" id="nav-juegos" data-key="nav.juegos">Juegos</a>
+
+      <!-- Selector de idioma -->
+      <select id="language-selector">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+  </nav>
+
+  <div class="social-container">
+    <h1 data-key="social.title">¡SIGUENOS!</h1>
+      <div class="social-links">
+        <!-- Botón Instagram -->
+        <a href="https://www.instagram.com/blastrux_games?igsh=bm1hOTI2OTIwM3J0" target="_blank" class="social-btn instagram-btn">
+          <img src="img/instagram.png" alt="Instagram"> Instagram
+        </a>
+      
+        <!-- Botón Twitter -->
+        <a href="https://x.com/blastrux_games?t=dzKh1yCQPK7GKUtC10fn2w&s=08" target="_blank" class="social-btn twitter-btn">
+          <img src="img/X.png" alt="Twitter"> Twitter
+        </a>
+      </div>
+  </div>
+  <div class="social-container">
+    
+       <div class="youtube-container">
+        <a href="https://youtube.com/@blastruxgames?si=rc7m0c8dLsZFPtqs" target="_blank" class="youtube-btn"><img src="img/YouTube.png" alt="" />
+          YouTube
+        </a>
+        <h2>SUBS</h2>
+        <div id="youtube-subs" class="subs-count">0</div>
+      </div>
+ </div>
+<script>
+const API_KEY = "AIzaSyDCuWMIn8ewgn755S9S8LUTjP9gXucanFo"; // 🔹 pegá tu API key
+const CHANNEL_ID = "UCtmgQPvRzKU7lXpOBtScBdA"; // 🔹 reemplazá con tu canal ID real
+const counterElement = document.getElementById("youtube-subs");
+
+async function getYouTubeSubscribers() {
+  try {
+    const response = await fetch(
+      `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`
+    );
+    const data = await response.json();
+    const subs = data.items[0].statistics.subscriberCount;
+    counterElement.textContent = subs.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  } catch (error) {
+    counterElement.textContent = "Error al cargar";
+    console.error(error);
+  }
+}
+
+getYouTubeSubscribers();
+setInterval(getYouTubeSubscribers, 60000); // 🔄 actualiza cada 60 segundos
+</script>
+
+
+  <!-- Scripts -->
+  <script src="lang.js"></script>
+  <script>
+    const selector = document.getElementById("language-selector");
+    selector.addEventListener("change", () => setLanguage(selector.value));
+    setLanguage("es");
+  </script>
+</body>
+          </html>
