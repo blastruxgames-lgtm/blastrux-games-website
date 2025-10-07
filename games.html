@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <title>Blastrux Games</title>
+  <link rel="shortcut icon" href="img/icono.png" type="image/x-icon" />
+</head>
+<body>
+  <nav>
+     <div class="logo"><img src="img/icono.png" alt="icono" />Blastrux Games</div>
+    <div class="menu">
+      <a href="index.html" id="nav-inicio" data-key="nav.inicio">Inicio</a>
+      <a href="social.html" id="nav-redes" data-key="nav.redes">Redes</a>
+
+      <!-- Selector de idioma -->
+      <select id="language-selector">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+  </nav>
+
+  <div class="games-container">
+    <h1 data-key="games.title">TRINK - Blastrux</h1>
+    <h3 data-key="games.soon">PRÓXIMAMENTE</h3>
+
+    <img src="img/LogoTrink.jpg" alt="Logo Trink" class="Logo">
+    
+    <div class="download-btn-container">
+          <a href="apks/Trink.apk" download class="download-btn" >
+        Beta (Android) <img src="img/Android.png" class="icon-android" alt="Android"/>
+        </a>
+    </div>
+
+
+  <!-- Scripts -->
+  <script src="lang.js"></script>
+  <script>
+    const selector = document.getElementById("language-selector");
+    selector.addEventListener("change", () => setLanguage(selector.value));
+    setLanguage("es");
+  </script>
+</body>
+</html>
