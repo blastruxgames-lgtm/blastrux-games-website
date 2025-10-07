@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blastrux Games</title>
+  <link rel="shortcut icon" href="img/icono.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+<body>
+  <nav>
+    <div class="logo"><img src="img/icono.png" alt="icono" />Blastrux Games</div>
+    <div class="menu">
+      <a href="games.html" id="nav-juegos" data-key="nav.juegos">Juegos</a>
+      <a href="social.html" id="nav-redes" data-key="nav.redes">Redes</a>
+
+      <!-- Selector de idioma -->
+      <select id="language-selector">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- Contenedor de imagen + título -->
+  <div class="header-container">
+    <img src="img/icono con fondo.png" alt="Logo Blastrux">
+    <h1 data-key="index.title">Blastrux – Desarrollador de Videojuegos en Godot</h1>
+  </div>
+
+  <!-- Descripción -->
+  <div class="description">
+    <h3 data-key="index.description">
+      Blastrux es un desarrollador independiente apasionado por la creación de mundos interactivos y experiencias inmersivas. 
+      Su enfoque principal está en el motor Godot Engine, donde combina programación en GDScript con diseño visual 2D y 3D para dar vida a videojuegos únicos y dinámicos.
+      <br><br>
+      Con un estilo creativo y técnico a la vez, Blastrux busca equilibrar jugabilidad fluida, narrativa envolvente y diseño artístico. 
+      Ha trabajado en la construcción de sistemas de menús, físicas personalizadas, inteligencia artificial básica y mecánicas innovadoras, 
+      siempre con la meta de brindar experiencias divertidas y accesibles.
+      <br><br>
+      Su filosofía se basa en el aprendizaje constante, la experimentación y la exploración de nuevas ideas que desafíen los límites de los juegos indie. 
+      Blastrux no solo desarrolla videojuegos: crea universos en los que cada jugador puede vivir una aventura distinta.
+    </h3>
+  </div>
+
+  <!-- Scripts -->
+  <script src="lang.js"></script>
+  <script>
+    const selector = document.getElementById("language-selector");
+    selector.addEventListener("change", () => setLanguage(selector.value));
+    setLanguage("es"); // idioma inicial
+  </script>
+</body>
+        </html>
